@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ MIKITO | Music & Entertainment</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#101014;color:white}
+header{background:#19191f;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.logo{font-size:25px;font-weight:bold;color:#ffb000}
+.logo span{color:white}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{text-align:center;padding:75px 20px;background:linear-gradient(135deg,#29200b,#17171d,#101014)}
+.hero h1{font-size:43px;margin-bottom:15px}
+.hero h1 span{color:#ffb000}
+.hero p{color:#ccc;margin-bottom:25px}
+.search{max-width:480px;margin:auto;display:flex}
+.search input{flex:1;padding:14px;border:0;border-radius:7px 0 0 7px;outline:none}
+.search button{padding:14px 20px;border:0;background:#ffb000;font-weight:bold;border-radius:0 7px 7px 0}
+section{padding:35px 6%}
+.heading{font-size:23px;margin-bottom:22px;border-left:4px solid #ffb000;padding-left:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.card{background:#1d1d24;border-radius:10px;overflow:hidden;border:1px solid #303038}
+.cover{height:155px;background:linear-gradient(135deg,#5b3900,#17171d);display:flex;align-items:center;justify-content:center;font-size:45px}
+.card-info{padding:15px}
+.card h3{font-size:16px;margin-bottom:8px}
+.card p{font-size:13px;color:#aaa}
+.tag{display:inline-block;color:#ffb000;font-size:11px;margin-top:12px}
+.about{background:#19191f;text-align:center}
+.about p{color:#ccc;line-height:1.8;max-width:650px;margin:auto}
+footer{text-align:center;padding:25px;color:#999;border-top:1px solid #333;font-size:13px}
+@media(max-width:600px){
+header{padding:17px 5%;flex-wrap:wrap;gap:15px}
+nav a{margin-left:0;margin-right:13px}
+.hero h1{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">DJ <span>MIKITO</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#music">Music</a>
+<a href="#mix">DJ Mix</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<div class="hero" id="home">
+<h1>WELCOME TO <span>DJ MIKITO</span></h1>
+<p>Nyumbani kwa muziki mpya, burudani na DJ Mix kali.</p>
+<div class="search">
+<input type="text" id="searchInput" placeholder="Tafuta wimbo au DJ...">
+<button onclick="searchMusic()">SEARCH</button>
+</div>
+</div>
+
+<section id="music">
+<h2 class="heading">NEW MUSIC</h2>
+<div class="cards" id="musicCards">
+<div class="card">
+<div class="cover">🎵</div>
+<div class="card-info">
+<h3>Nyimbo mpya zinakuja</h3>
+<p>DJ MIKITO Music</p>
+<span class="tag">COMING SOON</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="mix">
+<h2 class="heading">DJ MIX</h2>
+<div class="cards">
+<div class="card">
+<div class="cover">🎧</div>
+<div class="card-info">
+<h3>DJ Mix Collection</h3>
+<p>Mix kali kutoka kwa ma-DJ mbalimbali.</p>
+<span class="tag">COMING SOON</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<h2 class="heading">ABOUT DJ MIKITO</h2>
+<p>DJ MIKITO ni jukwaa la muziki na burudani. Hapa utapata nyimbo mpya, DJ Mix na burudani mbalimbali kutoka kwa wasanii na ma-DJ.</p>
+</section>
+
+<footer>
+<p>© 2026 DJ MIKITO. All Rights Reserved.</p>
+<p>Music • Entertainment • DJ Mix</p>
+</footer>
+
+<script>
+function searchMusic(){
+const term=document.getElementById("searchInput").value.toLowerCase();
+const cards=document.querySelectorAll(".card");
+cards.forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(term)?"block":"none";
+});
+}
+document.getElementById("searchInput").addEventListener("input",searchMusic);
+</script>
+
+</body>
+</html>
